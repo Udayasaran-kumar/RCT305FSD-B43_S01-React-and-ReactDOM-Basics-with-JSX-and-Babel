@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementing a Dynamic List in React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.4/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div> 
+    
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [title, setTitle] = useState("Initial Title");
+
+            const changeTitleVanilla = () => {
+                document.getElementById("title").innerText = "Changed via Vanilla JS";
+            };
+
+            const changeTitleReact = () => {
+                setTitle("Changed via React");
+            };
+
+            return (
+                <div>
+                    <h1 id="title">{title}</h1>
+                    <div>
+                        <button onClick={changeTitleVanilla}>
+                            Change Title (Vanilla JS)
+                        </button>
+                        <button onClick={changeTitleReact}>
+                            Change Title (React)
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>
