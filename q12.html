@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Implementing a Dynamic List in React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.4/babel.min.js" integrity="sha512-hX7KzoYtNHhNJsz8TAHyddcegokOwhmYiFWCDHqFkcoNVsYwCziO+NISSRlNKpfOYaqyQxm2+MTCJqSaHssJTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+        <div id="root"></div>
+</body>
+</html>
+<script>
+      let head=React.createElement("ul",null,
+      React.createElement("li",null,"React"),
+      React.createElement("li",null,"JavaScript"),
+      React.createElement("li",null,"CSS")
+    );
+    ReactDOM.createRoot(document.getElementById('root')).render(head);
+</script>
